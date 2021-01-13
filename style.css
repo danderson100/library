@@ -4,6 +4,7 @@ html, body {
     height: 95%;
     width: auto;
     font-family: 'Vidaloka', serif;
+    background-image: linear-gradient(#000428, #004e92);
 }
 
 h1, h2, p {
@@ -31,6 +32,19 @@ section {
 
 div {
     background-color: purple;
+}
+
+.head {
+    flex-direction: row;
+    grid-area: hd;
+}
+
+.cards-wrapper {
+    grid-area: main;
+}
+
+.sidebar {
+    grid-area: sb;
 }
 
 .cards-wrapper {
