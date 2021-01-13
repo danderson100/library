@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+
+html, body {
+    height: 95%;
+    width: auto;
+    font-family: 'Vidaloka', serif;
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+}
+
+/* this section will structure the main page 
+ * with a header (hd) main area, and sidebar (sb)
+*/
+section {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 1fr 6fr;
+    grid-template-columns: 6fr 2fr;
+    grid-template-areas:
+        "hd hd"
+        "main sb";
+    grid-gap: 1em;
+}
+
+div {
+    background-color: purple;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 10px 10px 10px;
+}
+
+.card {
+    width: 200px;
+    height: 260px;
+    border-style: solid;
+    border-color: black;
+    border-width: 10px;
+    border-radius: 10px;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.upper-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
