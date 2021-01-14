@@ -15,6 +15,10 @@ h1 {
     font-size: 50px;
 }
 
+p {
+    font-size: 20px;
+}
+
 /* this section will structure the main page 
  * with a header (hd) main area, and sidebar (sb)
 */
@@ -27,23 +31,70 @@ section {
     grid-template-areas:
         "hd hd"
         "main sb";
-    grid-gap: 1em;
+    
 }
 
-div {
+/* div {
     background-color: purple;
+} */
+
+button {
+    padding: 15px 32px;
+    background-color: green;
+    color: white;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20%;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(15, 49, 15);
+}
+
+.add-button:hover {
+    cursor: pointer;
+    border-color: rgb(141, 134, 134);
+    width: 170px;
+    height: 230px;
+    font-size: 22px;
+    font-style: bold;
+}
+
+#sign-in {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.storage-button-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .head {
-    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    border-bottom-style: solid;
+    border-width: 5px;
+    border-color: whitesmoke;
+
     grid-area: hd;
 }
 
 .cards-wrapper {
+    margin-top: 15px;
     grid-area: main;
 }
 
 .sidebar {
+    padding: 15px 0px 15px 0px;
+    border-left-style: solid;
+    border-width: 5px;
+    border-color: whitesmoke;
     grid-area: sb;
 }
 
@@ -56,12 +107,17 @@ div {
 }
 
 .card {
-    width: 200px;
-    height: 260px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 210px;
     border-style: solid;
     border-color: black;
     border-width: 10px;
     border-radius: 10px;
+    margin-left: 20px;
+    color: white;
+    background-color:rgb(15, 49, 15)
 }
 
 .centered {
