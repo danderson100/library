@@ -85,11 +85,6 @@ button:hover {
     grid-area: hd;
 }
 
-.cards-wrapper {
-    margin-top: 15px;
-    grid-area: main;
-}
-
 .sidebar {
     padding: 15px 0px 15px 0px;
     border-left-style: solid;
@@ -104,6 +99,8 @@ button:hover {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 10px 10px 10px 10px;
+    margin-top: 15px;
+    grid-area: main;
 }
 
 .card {

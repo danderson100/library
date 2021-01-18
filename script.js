@@ -4,8 +4,8 @@ let myLibrary = [];
 const addBookButton = document.querySelector('.add-button');
 addBookButton.addEventListener('click', displayBookForm);
 
-const submitBookBtn = document.querySelector('.submit');
-submitBookBtn.addEventListener('click', addBookToLibrary);
+// const submitBookBtn = document.querySelector('.submit');
+// submitBookBtn.addEventListener('click', addBookToLibrary);
 
 
 function Book(title, author, numPages, haveRead) {
@@ -16,6 +16,8 @@ function Book(title, author, numPages, haveRead) {
 }
 
 function addBookToLibrary() {
+    //close the form
+    closeBookForm();
     //get all the info from the form
     let title = document.getElementById("title").value;
 
@@ -28,12 +30,12 @@ function addBookToLibrary() {
     //then create a card next to the add card, which displays book info
     const newBook = new Book(title, authorName, pages, haveRead);
     myLibrary.push(newBook);
+    saveLocal();
+
     //call function to create a new card
     createBookCard(newBook);
 
-    //close the form
-    closeBookForm();
-
+    return false;
 }
 
 function createBookCard(newBook) {
@@ -44,7 +46,31 @@ function createBookCard(newBook) {
     console.log("The title is " + title);
 
     let newCard = document.createElement('div');
+    let bookTitle = document.createElement('p');
+    let authorName = document.createElement('p');
+    let numPages = document.createElement('p');
+    let haveRead = document.createElement('p');
+    let removeBtn = document.createElement('button');
+
+    if (newBook.haveRead) {
+        //then add text saying it's been read
+        haveRead.textContent = "Have Read"
+    }
+
+
+    bookTitle.textContent = newBook.title;
+    authorName.textContent = newBook.author;
+    numPages.textContent = newBook.numPages;
+
     newCard.classList.add("card");
+    newCard.classList.add("centered");
+
+    newCard.appendChild(bookTitle);
+    newCard.appendChild(authorName);
+    newCard.appendChild(numPages);
+    newCard.appendChild(haveRead);
+    newCard.appendChild(removeBtn);
+
     cardsWrapper.appendChild(newCard);
 }
 
@@ -60,3 +86,15 @@ function closeBookForm() {
     const popupForm = document.getElementById('bookForm');
     popupForm.style.display = "none";
 }
+//Local storage stuff
+function saveLocal() {
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
+  }
+  
+//   function restoreLocal() {
+//     myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
+//     if (myLibrary === null) myLibrary = [];
+//     updateBooksGrid();
+//   }
+  
+//   restoreLocal();
