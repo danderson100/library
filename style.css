@@ -5,6 +5,7 @@ html, body {
     width: auto;
     font-family: 'Vidaloka', serif;
     background-image: linear-gradient(#000428, #004e92);
+    margin: 0;
 }
 
 h1, h2, p {
@@ -107,7 +108,8 @@ button:hover {
     display: flex;
     flex-direction: column;
     width: 150px;
-    height: 210px;
+    height: auto;
+    max-height: 210px;
     border-style: solid;
     border-color: black;
     border-width: 10px;
