@@ -43,10 +43,9 @@ function createBookCard(newBook) {
     const cardsWrapper = document.querySelector('.cards-wrapper');
 
     let title = newBook.title;
-    console.log("The title is " + title);
 
     let newCard = document.createElement('div');
-    let bookTitle = document.createElement('p');
+    let bookTitle = document.createElement('h2');
     let authorName = document.createElement('p');
     let numPages = document.createElement('p');
     let haveRead = document.createElement('p');
