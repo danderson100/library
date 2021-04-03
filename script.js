@@ -39,7 +39,9 @@ function addBookToLibrary(e) {
 
     //call function to create a new card
     createBookCard(newBook);
-
+    //increment the numbr of books in library
+    console.log(myLibrary.length);
+    document.getElementById("num-books").textContent = myLibrary.length;
     return false;
 }
 
