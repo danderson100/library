@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="popup" id="bookForm">
-                    <form class="form-container" onsubmit="return addBookToLibrary();">
+                    <form class="form-container">
                         <h2 class="form-title">Add New Book</h2>
                         <input type="text" id="title" name="title" placeholder="Title">
                         <br>
@@ -33,14 +33,14 @@
                         <input type="checkbox" id="haveRead" name="haveRead" value="haveRead">
                         <label for="haveRead">Read?</label>
                         <button class="btn submit">Submit</button>
-                        <button type="submit" class="btn cancel">Cancel</button>
+                        <button type="button" class="btn cancel">Cancel</button>
                     </form>
                 </div>
             </div>
             <div class="sidebar center-top">
                 <h2><u>Book Information</u></h2>
-                <p>Books in library: 0</p>
-                <p>Number of Books Read: 0</p>
+                <p>Books in library: <span id="num-books">0</span></p>
+                <p>Number of Books Read: <span id="num-read">0</span></p>
                 <h2><u>Storage Options:</u></h2>
                 <div class="storage-button-container">
                     <button type="button" id="cloud-storage">Cloud (Firebase)</button>
