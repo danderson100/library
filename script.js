@@ -10,6 +10,12 @@ submitBookBtn.addEventListener('click', addBookToLibrary);
 const cancelBookAddBtn = document.querySelector('.cancel');
 cancelBookAddBtn.addEventListener('click', cancelBookAdd);
 
+const localStorageBtn = document.getElementById("local-storage");
+localStorageBtn.addEventListener('click', saveLocal);
+
+const restoreLocalBtn = document.getElementById("restore-storage");
+restoreLocalBtn.addEventListener('click', restoreLocal);
+
 
 function Book(title, author, numPages, haveRead) {
     this.title = title;
@@ -35,7 +41,6 @@ function addBookToLibrary(e) {
     //then create a card next to the add card, which displays book info
     const newBook = new Book(title, authorName, pages, haveRead);
     myLibrary.push(newBook);
-    saveLocal();
 
     //call function to create a new card
     createBookCard(newBook);
@@ -99,10 +104,18 @@ function saveLocal() {
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
   }
   
-//   function restoreLocal() {
-//     myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
-//     if (myLibrary === null) myLibrary = [];
-//     updateBooksGrid();
-//   }
+  function restoreLocal() {
+      console.log("restoring local...");
+    myLibrary = JSON.parse(localStorage.getItem("myLibrary"));
+    //console.log(myLibrary);
+    if (myLibrary === null) myLibrary = [];
+    updateBooksGrid();
+  }
+
+  function updateBooksGrid() {
+      for (var book in myLibrary) {
+          console.log(book);
+          createBookCard(book);
+      }
+  }
   
-//   restoreLocal();
